@@ -92,3 +92,65 @@ CompileFlags:
 Diagnostics:
   UnusedIncludes: None   # 禁止 include-cleaner 警告
 ```
+
+## 快捷键
+
+| 空格 | leader |
+| F4 | 切换显示或者隐藏不可见字符（空格等） |
+| F8或者<leader>o | tagbar大纲显示或者隐藏 |
+| F10 | 彻底关闭杀死floaterm终端 |
+| F12 | 显示或者隐藏floaterm终端 |
+| <C-p> | fzf-查找文件 |
+| <leader>f | fzf-rg-全局搜索文件内容 |
+| <C-f> | 在当前buffer中搜索内容 |
+|  <TAB>/<S-TAB> | 补全列表上下选择 |
+| gd | 跳转定义 |
+| gy | 跳转类型 |
+| gi | 跳转实现 |
+| gr | 跳转引用 |
+| <C-LeftMouse> | 跳转定义 |
+| <C-RightMouse> | 跳转引用 |
+| <M-LeftMouse>（alt+鼠标左键） | <C-o> |
+| K | 查看函数/文档注释 |
+| <leader>rn | 重命名 |
+| <leader>e | 打开侧边文件树 |
+| <leader>th | toggler Inlay Hints |
+| Ctrl+/ | 注释当前行或块 |
+| <leader>b | 弹出当前已经打开的所有buffer |
+| 光标在右侧的 Tagbar 面板里时，直接按下键盘上的 s 键 | 按字母顺序排列或者按文件出现顺序排列 |
+| <leader>k | 高亮或者取消高亮当前选择 |
+| <leader>K | 取消所有高亮 |
+| <leader>n | 跳转下一个高亮 |
+| <leader>N | 跳转上一个高亮 |
+| s+搜索+enter | easymotion跳转 |
+| ]c | gitgutter-下一个被修改的代码块 |
+| [c | gitgutter-上一个被修改的代码块 |
+| <leader>hp | gitgutter-预览代码修改之前的样子 |
+| <leader>hu | gitgutter-修改成未修改的状态 |
+| <leader>hs | gitgutter-将当前广播所在代码加入暂存区，相当于对这一小块代码git add |
+| <leaderhd> | gitgutter-文件修改前后对比 |
+| <leaderhc> | gitgutter-关闭预览窗口 |
+| 双击左键 | 高亮全局相同单词 |
+| x/d/c/D | 不污染剪切板 |
+| <leader>d | 真正的剪切 |
+| <leader>\ | 垂直分屏 |
+| <leader>- | 水平分屏 |
+| <leader>w | 关闭当前分屏 |
+| Ctrl + h/j/k/l | 不同窗口间穿梭 |
+| Ctrl + 上下左右箭头 | 调整窗口大小 |
+| <leader>= | 所有窗口瞬间恢复等大平衡 |
+| <Tab> | normal模式下，切换到下一个buffer |
+| <S-Tab> | normal模式下，切换到上一个buffer |
+| <leader>c | 关闭当前buffer |
+| <leader>w | 保存 |
+| <leader>q | 退出 |
+| <leader>wq | 保存退出 |
+| jj/jk | 退出插入模式 |
+| <leader><CR>/<Esc><Esc> | 取消搜索高亮 |
+| :CleanExtraSpaces | 一键清理行尾多余空格 |
+| gh | 跳到行首（非空字符） |
+| gl | 跳到行尾 |
+| <C-s> | 保存 |
+|  |  |
+|  |  |
+|  |  |
