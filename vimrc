@@ -1,6 +1,12 @@
 " 设置 Leader 键为空格
 let mapleader = "\<Space>"
 
+" 自动跳转到上一次退出文件时的光标位置
+autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
 " ========剪贴板基础配置===================
 " 让 Vim 的默认寄存器与系统剪贴板 (+ 和 *) 关联
 " 这样直接用 y, d, p 就能操作系统剪贴板，不需要输入 "+y
@@ -325,6 +331,13 @@ let g:floaterm_height = 0.3
 let g:floaterm_borderchars = '─│─│╭╮╯╰'
 " 如果你想彻底去掉边框，让它完全像一个底部分屏：
 " let g:floaterm_borderchars = '        '
+" ================= 强制修复终端滚轮问题 =================
+" 1. 在普通模式下，强制鼠标滚轮等于“向上/下滚动屏幕”
+nnoremap <ScrollWheelUp> <C-y>
+nnoremap <ScrollWheelDown> <C-e>
+" 2. 在终端输入模式下，只要往上滚，立刻退出输入模式并往上翻！
+tnoremap <silent> <ScrollWheelUp> <C-\><C-n><C-y>
+tnoremap <silent> <ScrollWheelDown> <C-\><C-n><C-e>
 
 
 
@@ -335,14 +348,6 @@ let g:floaterm_borderchars = '─│─│╭╮╯╰'
 let g:interestingWordsGUIColors = ['#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF', '#40E0D0', '#FFA500', '#DDA0DD', '#32CD32', '#F08080', '#87CEFA']
 " 普通 256 色终端下的颜色编号
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222', '118', '208', '219', '203', '170', '45']
-
-
-
-" 自动跳转到上一次退出文件时的光标位置
-autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
 
 
 
