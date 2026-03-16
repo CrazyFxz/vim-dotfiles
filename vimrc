@@ -115,7 +115,7 @@ call plug#begin('~/.vim/plugged')
 " 主题和高亮
 Plug 'morhetz/gruvbox'               " Gruvbox 主题
 Plug 'sheerun/vim-polyglot'          " 强大的多语言语法高亮集合
-
+Plug 'maru143/vim-sunset'
 " 核心：LSP 与 补全引擎
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -151,8 +151,10 @@ call plug#end()
 " ==========================================
 
 " --- 主题配置 ---
-autocmd vimenter * ++nested silent! colorscheme gruvbox
+" autocmd vimenter * ++nested silent! colorscheme gruvbox
+colorscheme sunset
 set background=dark
+hi Normal ctermbg=0 guibg=#000000  " 纯黑
 
 
 
