@@ -55,14 +55,16 @@ bear -- make
   "clangd.arguments":[
     "--background-index",
     "--compile-commands-dir=.",
-    "--query-driver=/opt/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc",
+    // "--query-driver=/opt/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc",
     "--query-driver=**/*gcc,**/*g++",
     "--header-insertion=never",
     "--clang-tidy"
   ],
 
   "explorer.file.showHiddenFiles": true,
-  "inlayHint.enable": false
+  "inlayHint.enable": false,
+  "semanticTokens.enable": true,
+  "suggest.noselect": true,
 }
 ```
 
