@@ -448,6 +448,8 @@ nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 " 关闭当前文件，但不破坏窗口布局 (非常重要！)
 nnoremap <leader>c :bdelete<CR>
+" 只保留当前 buffer
+nnoremap <leader>bo :%bd|e#<CR>
 
 " =========================================
 " 光标形状设置 (类似 VS Code)
@@ -471,9 +473,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 " 1. 快速保存和退出 (再也不用敲 :w 和 :q 了)
 " 按下 空格 + w 就可以保存
-noremap <leader>w :w<CR>
-noremap <leader>q :q<CR>
-noremap <leader>wq :wq<CR>
+" noremap <leader>w :w<CR>
+" noremap <leader>q :q<CR>
+" noremap <leader>wq :wq<CR>
 " 2. 快速退出插入模式 (拯救你的小指)
 " 连按两下 j 或者 jk 退出插入模式，比伸手按 Esc 快 10 倍
 inoremap jj <Esc>
