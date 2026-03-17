@@ -449,7 +449,7 @@ nnoremap <S-Tab> :bprevious<CR>
 " 关闭当前文件，但不破坏窗口布局 (非常重要！)
 nnoremap <leader>c :bdelete<CR>
 " 只保留当前 buffer
-nnoremap <leader>bo :%bd|e#<CR>
+nnoremap <leader>bo :silent! %bd\|e#\|bd#<CR>
 
 " =========================================
 " 光标形状设置 (类似 VS Code)
