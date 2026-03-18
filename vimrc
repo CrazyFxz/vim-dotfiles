@@ -177,6 +177,17 @@ vnoremap <C-f> "zy:BLines <C-R>=escape(@z, '#%\')<CR><CR>
 
 let g:fzf_layout = { 'down': '40%' }
 " let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+" " 在终端模式下（包含 FZF 面板），将鼠标滚轮映射为上/下方向键
+" 1. 保留你原本的全局终端映射（为 Floaterm 准备）
+tnoremap <silent> <ScrollWheelUp> <C-\><C-n><C-y>
+tnoremap <silent> <ScrollWheelDown> <C-\><C-n><C-e>
+
+" 2. 针对 FZF 窗口做特殊处理，使用 <buffer> 局部覆盖上面的全局设置
+augroup FZFTerminalMouse
+    autocmd!
+    autocmd FileType fzf tnoremap <buffer> <silent> <ScrollWheelUp> <Up>
+    autocmd FileType fzf tnoremap <buffer> <silent> <ScrollWheelDown> <Down>
+augroup END
 
 
 
@@ -323,6 +334,8 @@ let g:tagbar_sort = 0
 let g:floaterm_keymap_kill = '<F10>'
 " 按 F12 随时呼出/隐藏 悬浮终端
 let g:floaterm_keymap_toggle = '<F12>'
+" 将窗口类型设为普通分割窗口
+let g:floaterm_wintype = 'split'
 " 1. 设置终端在屏幕的位置为底部 ('bottom')
 let g:floaterm_position = 'bottom'
 " 2. 设置终端的宽度（1.0 表示占满全屏的 100%，0.9 表示占 90%）
@@ -331,20 +344,13 @@ let g:floaterm_width = 1.0
 " 3. 设置终端的高度（0.3 表示占屏幕高度的 30%）
 " 根据你自己的喜好调整，比如 0.4 或 0.2
 let g:floaterm_height = 0.3
-
-" 可选：修改边框样式
-" 选项有：'single' (单线), 'double' (双线), 'rounded' (圆角), 'none' (无边框)
-let g:floaterm_borderchars = '─│─│╭╮╯╰'
-" 如果你想彻底去掉边框，让它完全像一个底部分屏：
-" let g:floaterm_borderchars = '        '
-" ================= 强制修复终端滚轮问题 =================
-" 1. 在普通模式下，强制鼠标滚轮等于“向上/下滚动屏幕”
-nnoremap <ScrollWheelUp> <C-y>
-nnoremap <ScrollWheelDown> <C-e>
-" 2. 在终端输入模式下，只要往上滚，立刻退出输入模式并往上翻！
-tnoremap <silent> <ScrollWheelUp> <C-\><C-n><C-y>
-tnoremap <silent> <ScrollWheelDown> <C-\><C-n><C-e>
-
+" " ================= 强制修复终端滚轮问题 =================
+" " 1. 在普通模式下，强制鼠标滚轮等于“向上/下滚动屏幕”
+" nnoremap <ScrollWheelUp> <C-y>
+" nnoremap <ScrollWheelDown> <C-e>
+" " 2. 在终端输入模式下，只要往上滚，立刻退出输入模式并往上翻！
+" tnoremap <silent> <ScrollWheelUp> <C-\><C-n><C-y>
+" tnoremap <silent> <ScrollWheelDown> <C-\><C-n><C-e>
 
 
 " -----------vim-interestingwords 高亮配置----------------
