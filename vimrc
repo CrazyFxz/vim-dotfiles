@@ -167,7 +167,7 @@ nnoremap <C-p> m':Files<CR>
 nnoremap <leader>f m':Rg<CR>
 nnoremap <C-f> m':Rg<CR>
 " 绑定 Ctrl + F 在当前 buffer 中模糊搜索并跳转
-nnoremap <C-f> :BLines<CR>
+nnoremap <C-f> m':BLines<CR>
 nnoremap <leader>h m':History<CR>
 " 【fzf全局搜索】选中文字后，按 leader + f 直接全局搜索该文字
 " 原理：将选中的文字复制到 z 寄存器（"zy），然后执行 :Rg 并在命令行粘贴 z 寄存器的内容（<C-R>z）
