@@ -144,6 +144,8 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 
 " 安装 Git 侧边栏提示插件
 Plug 'airblade/vim-gitgutter'
+
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " ==========================================
@@ -381,6 +383,26 @@ let g:gitgutter_sign_modified_removed = '~-'
 nmap <Leader>hc :pc<CR>
 " 使用 <Leader>gd 来预览差异 (Git Diff)
 nnoremap <Leader>hd :GitGutterDiffOrig<CR>
+
+
+
+" indentLine
+" 设置 indentLine 默认不启用（0为关闭，1为开启）
+let g:indentLine_enabled = 0
+" 1. 指定使用的字符为虚竖线
+" let g:indentLine_char = '┊'
+
+" 【可选替代方案】因为不能不同颜色，你可以让不同层级显示不同形态的虚线
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['|', '┊']
+
+" 2. 设置字符的颜色（所有层级统一颜色）
+" 终端 256 色环境
+let g:indentLine_color_term = 239
+" GUI 环境或开启了 termguicolors 的真色彩环境
+let g:indentLine_color_gui = '#A4E57E'
+" 使用 F5 键一键切换（开启/关闭）indentLine 缩进线
+nnoremap <silent> <F5> :IndentLinesToggle<CR>
 
 
 
