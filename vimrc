@@ -478,8 +478,8 @@ nnoremap <leader>= <C-w>=
 " 直接按 Tab 键切换到下一个文件，Shift+Tab 切换到上一个文件
 " nnoremap <Tab> :bnext<CR>
 " nnoremap <S-Tab> :bprevious<CR>
-nnoremap <leader>l :bnext<CR>
-nnoremap <leader>h :bprevious<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [b :bprevious<CR>
 " 关闭当前文件，但不破坏窗口布局 (非常重要！)
 nnoremap <leader>c :bdelete<CR>
 " 只保留当前 buffer
