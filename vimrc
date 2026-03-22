@@ -78,6 +78,7 @@ set signcolumn=yes      " 始终显示侧边标志列，防止屏幕闪烁
 set clipboard=unnamedplus
 set incsearch           " 开启实时搜索（边输入边匹配当前字符）
 set hlsearch            " 高亮所有搜索匹配到的结果
+set nomodeline          " 关闭 modeline 功能
 
 " ==========================================
 " Buffer 与撤销 (Undo) 行为管理
