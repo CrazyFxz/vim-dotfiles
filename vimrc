@@ -69,6 +69,7 @@ set showcmd                 " 显示不完整的命令
 set wildmenu                " 命令模式下底部显示补全状态
 set shiftwidth=4        " 缩进宽度为4
 set expandtab           " 将Tab替换为空格
+set softtabstop=4       " Tab 插入4个空格
 set autoindent          " 自动缩进
 set mouse=a             " 支持鼠标
 set ignorecase          " 搜索时忽略大小写
@@ -535,6 +536,8 @@ nnoremap <C-a> ggVG
 inoremap <C-a> <Esc>ggVG
 " Visual (可视/选中模式) 下 Ctrl+a 扩大到全选
 vnoremap <C-a> <Esc>ggVG
+" 绑定快捷键：按 F6 一键格式化整个文件并保存
+nnoremap <F6> :%!clang-format<CR>
 
 " ==========================================
 " 一键清理行尾多余空格 (无痕版), :CleanExtraSpaces
