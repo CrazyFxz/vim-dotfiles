@@ -7,7 +7,7 @@ echo ">>> 开始配置 Vim IDE 环境..."
 # ripgrep: 极速文件内容搜索工具 (为 FZF 提供支持)
 # bear: 生成 compile_commands.json 的工具
 sudo apt update
-sudo apt install -y vim git curl build-essential cmake clangd ripgrep bear python3-venv universal-ctags
+sudo apt install -y vim git curl build-essential cmake clangd ripgrep bear python3-venv universal-ctags clang-format
 
 # 2. 安装 Node.js (Coc.nvim 的强依赖，Ubuntu 22.04 默认源太旧，这里使用 NodeSource 源 v20)
 if ! command -v node &> /dev/null; then
