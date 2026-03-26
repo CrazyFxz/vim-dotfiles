@@ -86,7 +86,7 @@ set titlestring=%{fnamemodify(getcwd(),\ ':t')}
 
 " 开启代码折叠
 set foldenable
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=99   " 默认不折叠
 
 " ==========================================
