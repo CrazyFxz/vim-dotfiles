@@ -84,6 +84,11 @@ set title
 " set titlestring=%{fnamemodify(getcwd(),\ ':~')}
 set titlestring=%{fnamemodify(getcwd(),\ ':t')}
 
+" 开启代码折叠
+set foldenable
+set foldmethod=syntax
+set foldlevelstart=99   " 默认不折叠
+
 " ==========================================
 " Buffer 与撤销 (Undo) 行为管理
 " ==========================================
@@ -333,6 +338,11 @@ let g:tagbar_sort = 0
 " 当你的光标在右侧的 Tagbar 面板里时，直接按下键盘上的 s 键。
 " 按一次 s：变成按字母顺序排列（底部会提示 Sorted alphabetically）。
 " 再按一次 s：变回按文件出现顺序排列（底部会提示 Sorted by file order）。
+"
+" 左边显示tagbar
+let g:tagbar_left=1
+" tagbar 宽度
+let g:tagbar_width=80
 
 
 
@@ -350,7 +360,7 @@ let g:floaterm_position = 'bottom'
 let g:floaterm_width = 1.0
 " 3. 设置终端的高度（0.3 表示占屏幕高度的 30%）
 " 根据你自己的喜好调整，比如 0.4 或 0.2
-let g:floaterm_height = 0.3
+let g:floaterm_height = 0.4
 " " ================= 强制修复终端滚轮问题 =================
 " " 1. 在普通模式下，强制鼠标滚轮等于“向上/下滚动屏幕”
 " nnoremap <ScrollWheelUp> <C-y>
