@@ -54,6 +54,10 @@ nnoremap <F4> :set list!<CR>
 
 " ======基础设置 (Basic Settings)==========
 
+" " Disable annoying beeping
+set noerrorbells
+set vb t_vb=
+
 " 禁用所有中间文件、备份文件和交换文件
 set noswapfile      " 禁止生成临时交换文件 (.swp)
 set nobackup        " 禁止生成备份文件 (*~)
@@ -156,6 +160,8 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'Yggdroot/indentLine'
+
+Plug 'luochen1990/rainbow'
 call plug#end()
 
 " ==========================================
@@ -421,6 +427,42 @@ nnoremap <silent> <F5> :IndentLinesToggle<CR>
 
 
 
+" luochen1990/rainbow
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+\	'guis': [''],
+\	'cterms': [''],
+\	'operators': '_,_',
+\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\	'separately': {
+\		'*': {},
+\		'markdown': {
+\			'parentheses_options': 'containedin=markdownCode contained',
+\		},
+\		'lisp': {
+\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\		},
+\		'haskell': {
+\			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
+\		},
+\		'vim': {
+\			'parentheses_options': 'containedin=vimFuncBody',
+\		},
+\		'perl': {
+\			'syn_name_prefix': 'perlBlockFoldRainbow',
+\		},
+\		'stylus': {
+\			'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'],
+\		},
+\		'css': 0,
+\	}
+\}
+
+
+
+
 " ==========================================
 " 设置与快捷键
 " ==========================================
@@ -495,6 +537,8 @@ nnoremap <leader>= <C-w>=
 " nnoremap <S-Tab> :bprevious<CR>
 nnoremap ]b :bnext<CR>
 nnoremap [b :bprevious<CR>
+nnoremap <S-l> :bnext<CR>
+nnoremap <S-h> :bprevious<CR>
 " 关闭当前文件，但不破坏窗口布局 (非常重要！)
 nnoremap <leader>c :bdelete<CR>
 " 只保留当前 buffer
@@ -529,6 +573,8 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 " 连按两下 j 或者 jk 退出插入模式，比伸手按 Esc 快 10 倍
 inoremap jj <Esc>
 inoremap jk <Esc>
+inoremap JK <Esc>
+inoremap JJ <Esc>
 " 3. 一键取消搜索高亮
 " Vim 搜索完后那些高亮词一直亮着很烦，按 空格 + 回车 瞬间清空高亮
 noremap <leader><CR> :nohlsearch<CR>
