@@ -130,6 +130,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'               " Gruvbox 主题
 Plug 'sheerun/vim-polyglot'          " 强大的多语言语法高亮集合
 Plug 'maru143/vim-sunset'
+Plug 'owickstrom/vim-colors-paramount'
 " 核心：LSP 与 补全引擎
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -170,9 +171,11 @@ call plug#end()
 
 " --- 主题配置 ---
 " autocmd vimenter * ++nested silent! colorscheme gruvbox
-colorscheme sunset
+" colorscheme sunset
+" colorscheme desert
+colorscheme unokai
 set background=dark
-hi Normal ctermbg=0 guibg=#000000  " 纯黑
+" hi Normal ctermbg=0 guibg=#000000  " 纯黑
 
 
 
